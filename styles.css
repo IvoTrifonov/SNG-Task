@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&display=swap');
+
+*, *b::before, *::after {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --default-border-radius: 5px;
+    --default-heading-color: #212529;
+    --default-paragraph-color: #757575;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+.cards-section {
+    margin: 3em auto;
+    padding: 1.2em;
+    border: 1px solid #aaaaaa;
+    border-radius: var(--default-border-radius);
+}
+
+.cards-section {
+    text-align: center;
+    font-family: Bitter,serif;
+    color: var(--default-heading-color);
+}
+
+.cards-section > h2 {
+    font-weight: 700;
+    font-size: 1.75rem;
+}
+
+.cards-section > p {
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+
+/* adding this helper class because the opacity transition and AOS animation can't work together on one class   */
+.card-wrapper {
+    min-width: 30%;
+    transition: opacity 0.3s ease-in;
+}
+
+.card-wrapper:hover { opacity: 0; }
+
+.card-box {
+    padding: 1em;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 0px 10px -2px #2F2F2F; 
+    box-shadow: 0px 0px 6px -4px #525252;
+    border-radius: var(--default-border-radius);
+}
+
+.card-box h3 {
+    text-align: center;
+    margin: 1em 0;
+    font-family: Bitter,serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--default-heading-color);
+}
+
+.card-box p {
+    font-family: Open Sans,sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--default-paragraph-color);
+}
+
+.card-box::before {
+    display: block;
+    content: '';
+    height: 4rem;
+    width: 4rem;
+    margin: 0.7em auto;
+    background-size: cover;
+    background-image: url("https://sgtautotransport.com/images/icons/zero-upfront-payments-icon.svg?ver=002");
+}
+
+.card-wrapper:nth-child(2) .card-box::before {
+    background-image: url("https://sgtautotransport.com/images/icons/uship-icon.svg");
+}
+
+.card-wrapper:last-child .card-box::before {
+    background-image: url("https://sgtautotransport.com/images/icons/insurance-icon.svg");
+}
+
+@media (max-width: 768px) {
+    html { font-size: 14px; }
+}
